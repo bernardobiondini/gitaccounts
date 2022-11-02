@@ -12,7 +12,7 @@ A aplicação monta um ranking com os usuários, deixando aquele que tiver mais 
 
 ### Hospedagem
 
-O site foi hospedado pela ferramenta Github Pages: [GitRanking (bernardobiondini.github.io)](https://bernardobiondini.github.io/gitranking/)
+O site foi hospedado pela ferramenta Github Pages: <a href="https://bernardobiondini.github.io/gitranking/" target="_blank">GitRanking (bernardobiondini.github.io)</a> 
 
 ### Imagens da Aplicação
 
