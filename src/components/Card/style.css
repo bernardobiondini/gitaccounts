@@ -1,0 +1,57 @@
+@keyframes showUp {
+  0% {
+    width: 10%;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  75% {
+    width: 75%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.user-card {
+  background-color: rgb(255, 25, 224);
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: white;
+  animation: showUp 0.5s linear;
+}
+
+.user-card p {
+  flex: 1;
+}
+
+.projects {
+  margin-left: 60px;
+}
+
+.user-card .image-card {
+  flex: 1;
+}
+
+.user-card .image-card img {
+  display: block;
+  max-height: 50px;
+  max-width: 50px;
+  border-radius: 100%;
+}
