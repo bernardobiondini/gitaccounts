@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gitranking/static/css/main.199398ad.css",
+    "main.js": "/gitranking/static/js/main.30d86373.js",
+    "index.html": "/gitranking/index.html",
+    "main.199398ad.css.map": "/gitranking/static/css/main.199398ad.css.map",
+    "main.30d86373.js.map": "/gitranking/static/js/main.30d86373.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.199398ad.css",
+    "static/js/main.30d86373.js"
+  ]
+}
