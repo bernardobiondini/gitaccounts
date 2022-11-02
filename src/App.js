@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import axios from 'axios';
+import toast, {Toaster} from 'react-hot-toast';
 
 import {Card} from './components/Card/index'
 
@@ -14,28 +15,34 @@ function App() {
   async function handleAddUser(event) {
     event.preventDefault();
 
-    const url = `https://api.github.com/users/${userName}`
+    try {
 
-    const result = await axios.get(url);
+      const url = `https://api.github.com/users/${userName}`
 
-    if(!result) {
+      const result = await axios.get(url);
 
+      const user = {
+        id: result.data.id,
+        name: result.data.name,
+        avatar: result.data.avatar_url,
+        projectsNumber: result.data.public_repos
+      }
+
+      toast.success("Usuário adicionado ao ranking")
+      
+      setUsers(prevUsers => [...prevUsers, user]);
+
+      document.getElementById("gitForm").reset();
+
+      setUserName("Adiconado");
+
+      setTimeout( () => setUserName(""));
+
+    } catch {
+      toast.error("Usuário não encontrado");
+      document.getElementById("gitForm").reset();
     }
 
-    const user = {
-      id: result.data.id,
-      name: result.data.name,
-      avatar: result.data.avatar_url,
-      projectsNumber: result.data.public_repos
-    }
-    
-    setUsers(prevUsers => [...prevUsers, user]);
-
-    document.getElementById("gitForm").reset();
-
-    setUserName("Adiconado");
-
-    setTimeout( () => setUserName(""));
   }
 
   useEffect( () => {
@@ -44,7 +51,7 @@ function App() {
 
   return (
     <main>
-
+      <div><Toaster/></div>
       
       <form id="gitForm" onSubmit={handleAddUser}>
         <label htmlFor="userInput">Usuário:</label>
